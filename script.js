@@ -17,7 +17,6 @@ let secondPalette = document.getElementById('secondPalette');
 let thirdPalette = document.getElementById('thirdPalette');
 let fourthPalette = document.getElementById('fourthPalette');
 
-// Achei a função neste site: https://www.w3schools.com/howto/howto_js_remove_class.asp
 function removeSelectedClass() {
   let selectedColor = document.querySelector('.selected');
   selectedColor.classList.remove('selected');
@@ -76,20 +75,6 @@ function generateDynamicBoard (numberPixels){
   createBoard (numberPixels);
   eventListenerPixels();
 }
-
-let generateBoard = document.getElementById('generate-board');
-let inputBoardSize = document.getElementById('board-size');
-generateBoard.addEventListener('click', function(){
-  if(inputBoardSize.value === ''){
-    alert('Board inválido!');
-  } else if(inputBoardSize.value < 5){
-    generateDynamicBoard(5);
-  } else if(inputBoardSize.value > 50){
-    generateDynamicBoard(50);
-  } else {
-    generateDynamicBoard(inputBoardSize.value);
-  }
-})
 
 function generateRandomColor(){
   let randomColor = 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
